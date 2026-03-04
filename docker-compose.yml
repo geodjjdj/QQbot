@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  bot:
+    image: your-bot-image
+    container_name: qqbot
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - SOME_ENV_VARIABLE=value
+  go-cqhttp:
+    image: your-go-cqhttp-image
+    container_name: go-cqhttp
+    restart: unless-stopped
+    ports:
+      - "5700:5700"
+    volumes:
+      - ./data:/go-cqhttp/data
